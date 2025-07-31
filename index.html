@@ -397,8 +397,9 @@
         const jumlahKasar = (parseFloat(jumlahFizikal) + parseFloat(jumlahPembangunan) + parseFloat(jumlahOnline) + parseFloat(jumlahTambahanBonus)).toFixed(2);
 
         let butiranFizikal = '';
-        document.querySelectorAll('#kelasContainer .border').forEach(div => {
-            if (div.querySelector('input[type="checkbox"]').checked && parseFloat(div.querySelector('.subtotal-jumlah').textContent.replace('RM','')) > 0) {
+        document.querySelectorAll('#kelasContainer > div').forEach(div => {
+            const checkbox = div.querySelector('input[type="checkbox"]');
+            if (checkbox && checkbox.checked && parseFloat(div.querySelector('.subtotal-jumlah').textContent.replace('RM','')) > 0) {
                 const namaLokasi = div.querySelector('.nama-lokasi').value || 'Lokasi Tidak Dinamakan';
                 const bulanSelect = div.querySelector('.kelas-bulan');
                 const bulanText = bulanSelect.options[bulanSelect.selectedIndex].text;
@@ -408,8 +409,9 @@
         });
 
         let butiranPembangunan = '';
-        document.querySelectorAll('#pembangunanContainer .border').forEach(div => {
-             if (div.querySelector('input[type="checkbox"]').checked && parseFloat(div.querySelector('.subtotal-jumlah').textContent.replace('RM','')) > 0) {
+        document.querySelectorAll('#pembangunanContainer > div').forEach(div => {
+            const checkbox = div.querySelector('input[type="checkbox"]');
+             if (checkbox && checkbox.checked && parseFloat(div.querySelector('.subtotal-jumlah').textContent.replace('RM','')) > 0) {
                 const nama = div.querySelector('.nama-lokasi').value || 'Kumpulan Tidak Dinamakan';
                 const bulanSelect = div.querySelector('.kelas-bulan');
                 const bulanText = bulanSelect.options[bulanSelect.selectedIndex].text;
