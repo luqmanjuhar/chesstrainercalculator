@@ -446,9 +446,9 @@
 
         const payslipHTML = `
             <div class="p-6 md:p-8 lg:p-10 bg-white font-sans text-sm text-gray-800 payslip-container">
-                <div class="flex justify-between items-start mb-6">
+                <div class="flex justify-between items-center mb-6">
                     <div>
-                        <img src="https://raw.githubusercontent.com/luqmanjuhar/chesstrainercalculator/main/Asset%2028.png" alt="Logo Akademi" class="h-12">
+                        <img src="https://raw.githubusercontent.com/luqmanjuhar/chesstrainercalculator/main/Asset%2028.png" alt="Logo Akademi" class="h-10">
                     </div>
                     <div class="text-right">
                         <h2 class="text-lg font-bold">KAMUS CATUR ENTERPRISE (CT0099869-W)</h2>
@@ -469,13 +469,13 @@
                 <table class="w-full mb-6">
                     <thead><tr class="bg-gray-100 border-b-2 border-gray-300"><th class="text-left p-2 font-semibold">BUTIRAN PENDAPATAN</th><th class="text-right p-2 font-semibold">JUMLAH (RM)</th></tr></thead>
                     <tbody>
-                        <tr><td class="py-2 font-medium">Elaun Kelas Fizikal</td><td class="py-2 text-right font-medium">${jumlahFizikal}</td></tr>
+                        <tr><td class="py-2 font-bold uppercase">Elaun Kelas Fizikal</td><td class="py-2 text-right font-bold uppercase">${jumlahFizikal}</td></tr>
                         ${butiranFizikal || ''}
-                        <tr><td class="py-2 font-medium">Elaun Kelas Pembangunan</td><td class="py-2 text-right font-medium">${jumlahPembangunan}</td></tr>
+                        <tr><td class="py-2 font-bold uppercase">Elaun Kelas Pembangunan</td><td class="py-2 text-right font-bold uppercase">${jumlahPembangunan}</td></tr>
                         ${butiranPembangunan || ''}
-                        <tr><td class="py-2 font-medium">Elaun Kelas Online</td><td class="py-2 text-right font-medium">${jumlahOnline}</td></tr>
+                        <tr><td class="py-2 font-bold uppercase">Elaun Kelas Online</td><td class="py-2 text-right font-bold uppercase">${jumlahOnline}</td></tr>
                         ${butiranOnline || ''}
-                        <tr><td class="py-2 font-medium">Elaun Tambahan & Bonus</td><td class="py-2 text-right font-medium">${jumlahTambahanBonus}</td></tr>
+                        <tr><td class="py-2 font-bold uppercase">Elaun Tambahan & Bonus</td><td class="py-2 text-right font-bold uppercase">${jumlahTambahanBonus}</td></tr>
                         ${butiranTambahanBonus || ''}
                     </tbody>
                     <tfoot><tr class="bg-gray-100 border-t-2 border-gray-300"><th class="text-left p-2 font-bold">JUMLAH PENDAPATAN KASAR</th><th class="text-right p-2 font-bold">${jumlahKasar}</th></tr></tfoot>
