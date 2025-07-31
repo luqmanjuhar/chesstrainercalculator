@@ -395,7 +395,7 @@
                 const bulanSelect = div.querySelector('.kelas-bulan');
                 const bulanText = bulanSelect.options[bulanSelect.selectedIndex].text;
                 const jumlah = div.querySelector('.subtotal-jumlah').textContent;
-                butiranFizikal += `<tr><td class="py-1 pl-4" colspan="2">${namaLokasi} (${bulanText})</td><td class="py-1 text-right">${jumlah}</td></tr>`;
+                butiranFizikal += `<tr><td class="py-1 pl-4">${namaLokasi} (${bulanText})</td><td class="py-1 text-right">${jumlah}</td></tr>`;
             }
         });
 
@@ -407,7 +407,7 @@
                 const bulanSelect = div.querySelector('.kelas-bulan');
                 const bulanText = bulanSelect.options[bulanSelect.selectedIndex].text;
                 const jumlah = div.querySelector('.subtotal-jumlah').textContent;
-                butiranPembangunan += `<tr><td class="py-1 pl-4" colspan="2">${nama} (${bulanText})</td><td class="py-1 text-right">${jumlah}</td></tr>`;
+                butiranPembangunan += `<tr><td class="py-1 pl-4">${nama} (${bulanText})</td><td class="py-1 text-right">${jumlah}</td></tr>`;
             }
         });
 
@@ -415,25 +415,25 @@
         document.querySelectorAll('.student-container').forEach(div => {
             const nama = div.querySelector('.online-student-name').value || 'Pelajar Tidak Dinamakan';
             const jumlah = div.querySelector('.online-student-fee').textContent;
-            butiranOnline += `<tr><td class="py-1 pl-4" colspan="2">${nama}</td><td class="py-1 text-right">${jumlah}</td></tr>`;
+            butiranOnline += `<tr><td class="py-1 pl-4">${nama}</td><td class="py-1 text-right">${jumlah}</td></tr>`;
         });
         
         let butiranTambahanBonus = '';
-        if (parseFloat(document.getElementById('elaunKejohanan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Elaun Penyertaan Kejohanan</td><td class="py-1 text-right">RM${document.getElementById('elaunKejohanan').value}</td></tr>`;
-        if (parseFloat(document.getElementById('elaunMakan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Elaun Makan</td><td class="py-1 text-right">RM${document.getElementById('elaunMakan').value}</td></tr>`;
-        if (parseFloat(document.getElementById('elaunArbiter').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Elaun Arbiter</td><td class="py-1 text-right">RM${document.getElementById('elaunArbiter').value}</td></tr>`;
-        if (parseFloat(document.getElementById('elaunPembantu').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Elaun Pembantu</td><td class="py-1 text-right">RM${document.getElementById('elaunPembantu').value}</td></tr>`;
-        if (parseFloat(document.getElementById('bonusTahunan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Bonus Tahunan</td><td class="py-1 text-right">RM${document.getElementById('bonusTahunan').value}</td></tr>`;
-        if (parseFloat(document.getElementById('bonusPerayaan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Bonus Perayaan</td><td class="py-1 text-right">RM${document.getElementById('bonusPerayaan').value}</td></tr>`;
-        if (parseFloat(document.getElementById('bonusPelajar').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Bonus Pencapaian Pelajar</td><td class="py-1 text-right">RM${document.getElementById('bonusPelajar').value}</td></tr>`;
-        if (parseFloat(document.getElementById('bonusJurulatih').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4" colspan="2">Bonus Pencapaian Jurulatih</td><td class="py-1 text-right">RM${document.getElementById('bonusJurulatih').value}</td></tr>`;
+        if (parseFloat(document.getElementById('elaunKejohanan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Elaun Penyertaan Kejohanan</td><td class="py-1 text-right">RM${document.getElementById('elaunKejohanan').value}</td></tr>`;
+        if (parseFloat(document.getElementById('elaunMakan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Elaun Makan</td><td class="py-1 text-right">RM${document.getElementById('elaunMakan').value}</td></tr>`;
+        if (parseFloat(document.getElementById('elaunArbiter').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Elaun Arbiter</td><td class="py-1 text-right">RM${document.getElementById('elaunArbiter').value}</td></tr>`;
+        if (parseFloat(document.getElementById('elaunPembantu').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Elaun Pembantu</td><td class="py-1 text-right">RM${document.getElementById('elaunPembantu').value}</td></tr>`;
+        if (parseFloat(document.getElementById('bonusTahunan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Bonus Tahunan</td><td class="py-1 text-right">RM${document.getElementById('bonusTahunan').value}</td></tr>`;
+        if (parseFloat(document.getElementById('bonusPerayaan').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Bonus Perayaan</td><td class="py-1 text-right">RM${document.getElementById('bonusPerayaan').value}</td></tr>`;
+        if (parseFloat(document.getElementById('bonusPelajar').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Bonus Pencapaian Pelajar</td><td class="py-1 text-right">RM${document.getElementById('bonusPelajar').value}</td></tr>`;
+        if (parseFloat(document.getElementById('bonusJurulatih').value) > 0) butiranTambahanBonus += `<tr><td class="py-1 pl-4">Bonus Pencapaian Jurulatih</td><td class="py-1 text-right">RM${document.getElementById('bonusJurulatih').value}</td></tr>`;
 
         let butiranPengurangan = '';
-        if (parseFloat(document.getElementById('kejohanan').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4" colspan="2">Penyertaan Kejohanan</td><td class="py-1 text-right">RM${document.getElementById('kejohanan').value}</td></tr>`;
-        if (parseFloat(document.getElementById('yuran').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4" colspan="2">Komitmen Yuran Bulanan</td><td class="py-1 text-right">RM${document.getElementById('yuran').value}</td></tr>`;
-        if (parseFloat(document.getElementById('rakaman').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4" colspan="2">Sistem Rakaman</td><td class="py-1 text-right">RM${document.getElementById('rakaman').value}</td></tr>`;
-        if (parseFloat(document.getElementById('peralatan').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4" colspan="2">Pembelian Peralatan</td><td class="py-1 text-right">RM${document.getElementById('peralatan').value}</td></tr>`;
-        if (parseFloat(document.getElementById('lainPengurangan').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4" colspan="2">${document.getElementById('lainKeterangan').value || 'Lain-lain'}</td><td class="py-1 text-right">RM${document.getElementById('lainPengurangan').value}</td></tr>`;
+        if (parseFloat(document.getElementById('kejohanan').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4">Penyertaan Kejohanan</td><td class="py-1 text-right">RM${document.getElementById('kejohanan').value}</td></tr>`;
+        if (parseFloat(document.getElementById('yuran').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4">Komitmen Yuran Bulanan</td><td class="py-1 text-right">RM${document.getElementById('yuran').value}</td></tr>`;
+        if (parseFloat(document.getElementById('rakaman').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4">Sistem Rakaman</td><td class="py-1 text-right">RM${document.getElementById('rakaman').value}</td></tr>`;
+        if (parseFloat(document.getElementById('peralatan').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4">Pembelian Peralatan</td><td class="py-1 text-right">RM${document.getElementById('peralatan').value}</td></tr>`;
+        if (parseFloat(document.getElementById('lainPengurangan').value) > 0) butiranPengurangan += `<tr><td class="py-1 pl-4">${document.getElementById('lainKeterangan').value || 'Lain-lain'}</td><td class="py-1 text-right">RM${document.getElementById('lainPengurangan').value}</td></tr>`;
 
         const payslipHTML = `
             <div class="p-6 md:p-8 lg:p-10 bg-white font-sans text-sm text-gray-800 payslip-container">
@@ -442,9 +442,9 @@
                         <img src="https://drive.google.com/uc?export=view&id=1ozus1r779zv1x5kKFp4Br_WMwJr7aWan" alt="Logo Akademi" class="h-12">
                     </div>
                     <div class="text-right">
-                        <h2 class="text-lg font-bold">Nama Syarikat Anda</h2>
-                        <p class="text-xs">123 Jalan Catur, 50480 Kuala Lumpur</p>
-                        <p class="text-xs">Tel: 03-1234 5678 | Emel: admin@akademi.com</p>
+                        <h2 class="text-lg font-bold">KAMUS CATUR ENTERPRISE (CT0099869-W)</h2>
+                        <p class="text-xs">NO 7A, JALAN PULAI PERDANA 11/2, TAMAN SRI PULAI PERDANA, 81300, JOHOR BAHRU, JOHOR</p>
+                        <p class="text-xs">Tel: 018-2046224 | Emel: kamus.catur@gmail.com</p>
                     </div>
                 </div>
                 <div class="text-center mb-6">
@@ -458,19 +458,23 @@
                     <p><strong class="w-32 inline-block">Tarikh Penyata</strong>: ${new Date().toLocaleDateString('ms-MY', { day: '2-digit', month: 'long', year: 'numeric' })}</p>
                 </div>
                 <table class="w-full mb-6">
-                    <thead><tr class="bg-gray-100 border-b-2 border-gray-300"><th class="text-left p-2 font-semibold">BUTIRAN PENDAPATAN</th><th class="text-center p-2 font-semibold">KADAR / BILANGAN</th><th class="text-right p-2 font-semibold">JUMLAH (RM)</th></tr></thead>
+                    <thead><tr class="bg-gray-100 border-b-2 border-gray-300"><th class="text-left p-2 font-semibold">BUTIRAN PENDAPATAN</th><th class="text-right p-2 font-semibold">JUMLAH (RM)</th></tr></thead>
                     <tbody>
+                        <tr><td class="py-2 font-medium">Elaun Kelas Fizikal</td><td class="py-2 text-right font-medium">${jumlahFizikal}</td></tr>
                         ${butiranFizikal || ''}
+                        <tr><td class="py-2 font-medium">Elaun Kelas Pembangunan</td><td class="py-2 text-right font-medium">${jumlahPembangunan}</td></tr>
                         ${butiranPembangunan || ''}
+                        <tr><td class="py-2 font-medium">Elaun Kelas Online</td><td class="py-2 text-right font-medium">${jumlahOnline}</td></tr>
                         ${butiranOnline || ''}
+                        <tr><td class="py-2 font-medium">Elaun Tambahan & Bonus</td><td class="py-2 text-right font-medium">${jumlahTambahanBonus}</td></tr>
                         ${butiranTambahanBonus || ''}
                     </tbody>
-                    <tfoot><tr class="bg-gray-100 border-t-2 border-gray-300"><th class="text-left p-2 font-bold" colspan="2">JUMLAH PENDAPATAN KASAR</th><th class="text-right p-2 font-bold">${jumlahKasar}</th></tr></tfoot>
+                    <tfoot><tr class="bg-gray-100 border-t-2 border-gray-300"><th class="text-left p-2 font-bold">JUMLAH PENDAPATAN KASAR</th><th class="text-right p-2 font-bold">${jumlahKasar}</th></tr></tfoot>
                 </table>
                 <table class="w-full mb-6">
-                    <thead><tr class="bg-gray-100 border-b-2 border-gray-300"><th class="text-left p-2 font-semibold" colspan="2">BUTIRAN PENGURANGAN</th><th class="text-right p-2 font-semibold">JUMLAH (RM)</th></tr></thead>
-                    <tbody>${butiranPengurangan || '<tr><td class="py-1 pl-4 text-gray-500" colspan="3">Tiada data</td></tr>'}</tbody>
-                    <tfoot><tr class="bg-gray-100 border-t-2 border-gray-300"><th class="text-left p-2 font-bold" colspan="2">JUMLAH PENGURANGAN</th><th class="text-right p-2 font-bold">${jumlahPengurangan}</th></tr></tfoot>
+                    <thead><tr class="bg-gray-100 border-b-2 border-gray-300"><th class="text-left p-2 font-semibold">BUTIRAN PENGURANGAN</th><th class="text-right p-2 font-semibold">JUMLAH (RM)</th></tr></thead>
+                    <tbody>${butiranPengurangan || '<tr><td class="py-1 pl-4 text-gray-500" colspan="2">Tiada data</td></tr>'}</tbody>
+                    <tfoot><tr class="bg-gray-100 border-t-2 border-gray-300"><th class="text-left p-2 font-bold">JUMLAH PENGURANGAN</th><th class="text-right p-2 font-bold">${jumlahPengurangan}</th></tr></tfoot>
                 </table>
                 <div class="mt-8 p-4 bg-tertiary-light rounded-lg text-center">
                     <p class="text-lg font-semibold">PENDAPATAN BERSIH</p>
