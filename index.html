@@ -266,7 +266,12 @@
             <div class="subtotal-box mt-4"><h4 class="font-medium text-dark-text">Subtotal Kelas Pembangunan</h4><div class="subtotal-details text-sm mt-1"><p>Elaun Jurulatih: <span class="subtotal-pelajar">RM0</span></p><p class="font-medium mt-1">Jumlah Keseluruhan: <span class="subtotal-jumlah">RM0</span></p></div></div></div>`;
 
     const slotFizikalTemplate = (count) => `
-        <div class="slot-container"><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div><span class="font-medium text-dark-text">Slot ${count}:</span><input type="date" class="slot-tarikh w-full mt-1 px-3 py-2 border border-tertiary rounded-lg"></div><div><span class="font-medium text-dark-text">Jarak (KM):</span><select class="slot-jarak w-full mt-1 px-3 py-2 border border-tertiary rounded-lg"><option value="0">0 - 5 KM</option><option value="10">6 - 10 KM</option><option value="20">11 - 20 KM</option><option value="30">21 - 30 KM</option><option value="40">31 - 40 KM</option><option value="60">41 - 50 KM</option></select></div><div class="flex items-end"><button class="hapus-slot px-3 py-2 bg-secondary text-white rounded-lg hover:bg-secondary-hover transition">Hapus</button></div></div></div>`;
+        <div class="slot-container"><div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div><span class="font-medium text-dark-text">Slot ${count}:</span><input type="date" class="slot-tarikh w-full mt-1 px-3 py-2 border border-tertiary rounded-lg"></div>
+            <div><span class="font-medium text-dark-text">Kenderaan:</span><select class="slot-kenderaan w-full mt-1 px-3 py-2 border border-tertiary rounded-lg"><option value="kereta">Kereta</option><option value="motor">Motor</option></select></div>
+            <div><span class="font-medium text-dark-text">Jarak (KM):</span><select class="slot-jarak w-full mt-1 px-3 py-2 border border-tertiary rounded-lg"><option value="0">0 - 5 KM</option><option value="10">6 - 10 KM</option><option value="20">11 - 20 KM</option><option value="30">21 - 30 KM</option><option value="40">31 - 40 KM</option><option value="60">41 - 50 KM</option></select></div>
+            <div class="flex items-end"><button class="hapus-slot px-3 py-2 bg-secondary text-white rounded-lg hover:bg-secondary-hover transition">Hapus</button></div>
+        </div></div>`;
     
     const slotPembangunanTemplate = (count) => `
         <div class="slot-container"><div class="grid grid-cols-1 md:grid-cols-3 gap-4"><div><span class="font-medium text-dark-text">Slot ${count}:</span><input type="date" class="slot-tarikh w-full mt-1 px-3 py-2 border border-tertiary rounded-lg"></div><div class="flex items-end"><button class="hapus-slot px-3 py-2 bg-secondary text-white rounded-lg hover:bg-secondary-hover transition">Hapus</button></div></div></div>`;
@@ -359,7 +364,14 @@
         const elaunPerSlot = parseFloat(lokasiDiv.querySelector('.pelajar-rate').value) || 0;
         const slots = lokasiDiv.querySelectorAll('.slot-container');
         let totalElaunPelajar = slots.length * elaunPerSlot;
-        let totalJarak = Array.from(slots).reduce((acc, slot) => acc + (parseFloat(slot.querySelector('.slot-jarak')?.value) || 0), 0);
+        let totalJarak = Array.from(slots).reduce((acc, slot) => {
+            const kenderaan = slot.querySelector('.slot-kenderaan')?.value;
+            let mileage = parseFloat(slot.querySelector('.slot-jarak')?.value) || 0;
+            if (kenderaan === 'motor') {
+                mileage = mileage / 2;
+            }
+            return acc + mileage;
+        }, 0);
         
         const totalLokasi = totalElaunPelajar + totalJarak;
         lokasiDiv.querySelector('.subtotal-pelajar').textContent = `RM${totalElaunPelajar.toFixed(2)}`;
