@@ -566,7 +566,8 @@
         
         // Collect data logic
         document.querySelectorAll('#kelasContainer .border').forEach(div => {
-            if (div.querySelector('input[type="checkbox"]').checked) {
+            const checkbox = div.querySelector('input[type="checkbox"]');
+            if (checkbox && checkbox.checked) {
                 reportData.fizikal.push({
                     nama: div.querySelector('.nama-lokasi').value,
                     bulan: div.querySelector('.kelas-bulan').options[div.querySelector('.kelas-bulan').selectedIndex].text,
@@ -574,7 +575,22 @@
                 });
             }
         });
-        // ... (rest of data collection)
+        document.querySelectorAll('#pembangunanContainer .border').forEach(div => {
+            const checkbox = div.querySelector('input[type="checkbox"]');
+            if (checkbox && checkbox.checked) {
+                reportData.pembangunan.push({
+                    nama: div.querySelector('.nama-lokasi').value,
+                    bulan: div.querySelector('.kelas-bulan').options[div.querySelector('.kelas-bulan').selectedIndex].text,
+                    jumlah: div.querySelector('.subtotal-jumlah').textContent
+                });
+            }
+        });
+        document.querySelectorAll('.student-container').forEach(div => {
+            reportData.online.push({
+                nama: div.querySelector('.online-student-name').value,
+                jumlah: div.querySelector('.online-student-fee').textContent
+            });
+        });
 
 
         fetch(WEB_APP_URL, {
